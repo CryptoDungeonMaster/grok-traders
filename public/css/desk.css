@@ -287,6 +287,17 @@ section + section { margin-top: 72px; }
   color: var(--muted);
 }
 
+.wallet {
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 22rem;
+}
+
 .equity {
   font-size: 20px;
   letter-spacing: -0.02em;
@@ -552,3 +563,5 @@ footer p {
 .pubkey-row .lbl { display: block; margin-bottom: 12px; }
 .val.is-up { color: var(--up); }
 .val.is-down { color: var(--down); }
+
+.book-head span:nth-child(3) { text-align: right; }

@@ -85,9 +85,18 @@
   }
 
   async function getJson(path) {
-    var res = await fetch(path, { headers: { Accept: "application/json" } });
-    if (!res.ok) throw new Error("desk " + res.status);
-    return res.json();
+    var urls = [path];
+    if (path.indexOf(".json") === -1) urls.push(path + ".json");
+    var lastErr = new Error("desk unreachable");
+    for (var i = 0; i < urls.length; i++) {
+      try {
+        var res = await fetch(urls[i], { headers: { Accept: "application/json" } });
+        if (!res.ok) { lastErr = new Error("desk " + res.status); continue; }
+        var data = await res.json();
+        return data;
+      } catch (err) { lastErr = err; }
+    }
+    throw lastErr;
   }
 
   function paintClock() {
@@ -118,9 +127,12 @@
       row.appendChild(el("div", "rank", pad2(t.rank)));
       var who = el("div", "who");
       var name = el("a", "", t.name);
-      name.href = "/trader/" + t.slug;
+      name.href = "/trader.html?seat=" + t.slug;
       who.appendChild(name);
       who.appendChild(el("div", "voice", t.voice));
+      var wal = el("div", "wallet", t.pubkey || "");
+      wal.title = t.pubkey || "";
+      who.appendChild(wal);
       row.appendChild(who);
       var eq = el("div", "equity");
       if (Number(t.equitySol) > 0) eq.classList.add("is-up");
@@ -154,7 +166,7 @@
       time.dateTime = item.at || "";
       tick.appendChild(time);
       var name = el("a", "trader-name", item.name || item.trader);
-      name.href = "/trader/" + (item.trader || "");
+      name.href = "/trader.html?seat=" + (item.trader || "");
       tick.appendChild(name);
       tick.appendChild(el("div", "verb", verbOf(item)));
       var body = el("div", "body");
@@ -195,8 +207,8 @@
   }
 
   async function loadFloor() {
-    var board = await getJson("/api/leaderboard");
-    var tape = await getJson("/api/tape");
+    var board = await getJson("/api/leaderboard.json");
+    var tape = await getJson("/api/tape.json");
     setStatus(board.status);
     paintBook(board.traders);
     paintTicks(document.getElementById("tape"), tape.items, "No prints. The tape is clean.");
@@ -205,17 +217,27 @@
   }
 
   function slugFromPath() {
+    var q = new URLSearchParams(location.search).get("seat");
+    if (q) return q.toLowerCase();
     var parts = location.pathname.replace(/\/+$/, "").split("/");
-    return (parts[parts.length - 1] || "").toLowerCase();
+    var last = (parts[parts.length - 1] || "").toLowerCase();
+    if (last && last !== "trader.html" && last !== "trader" && last.indexOf(".") === -1) return last;
+    return "";
   }
 
   async function loadTrader() {
     var slug = slugFromPath();
     document.querySelectorAll("nav.seats a").forEach(function (a) {
-      if (a.getAttribute("href") === "/trader/" + slug) a.classList.add("is-on");
+      var href = a.getAttribute("href") || "";
+      if (href === "/trader/" + slug || href === "/trader.html?seat=" + slug) a.classList.add("is-on");
     });
-    var t = await getJson("/api/traders/" + encodeURIComponent(slug));
-    var board = await getJson("/api/leaderboard");
+    var board = await getJson("/api/leaderboard.json");
+    var t = (board.traders || []).find(function (x) { return x.slug === slug; });
+    if (!t) t = await getJson("/api/traders/" + encodeURIComponent(slug) + ".json");
+    if (!t || !t.pubkey) throw new Error("unknown seat");
+    var tape = await getJson("/api/tape.json").catch(function () { return { items: [] }; });
+    t.pitches = t.pitches || (tape.items || []).filter(function (e) { return e.trader === slug || e.name === t.name; });
+    t.fills = t.fills || [];
     setStatus(board.status);
     document.title = t.name + " — GROK TRADERS";
     document.getElementById("trader-name").textContent = t.name;
