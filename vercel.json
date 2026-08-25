@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node scripts/build.js",
+  "buildCommand": "node scripts/sync-chain.js && node scripts/build.js",
   "outputDirectory": "public",
   "cleanUrls": false,
   "rewrites": [

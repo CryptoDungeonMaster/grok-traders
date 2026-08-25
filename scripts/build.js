@@ -24,15 +24,6 @@ const seedPath = fs.existsSync(path.join(root, "data/desk.json"))
   : path.join(root, "data/seed.json");
 const desk = JSON.parse(fs.readFileSync(seedPath, "utf8"));
 
-const bags = {
-  blitz: { ticker: "APPLECAT", mint: "6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump", sizeSol: 2 },
-  sage: { ticker: "KERMIT", mint: "31TBAGQ4cydajbZYCqvuyA9SqmKV7zvtdmohkLAJpump", sizeSol: 1.5 },
-  hype: { ticker: "OTTER", mint: "FojFAR8uj6zn3327KD9WfFBVTbjvCwsVR5D3dyvSpump", sizeSol: 2.5 }
-};
-for (const [slug, bag] of Object.entries(bags)) {
-  if (desk.traders[slug] && !desk.traders[slug].bag) desk.traders[slug].bag = bag;
-}
-
 const traders = Object.values(desk.traders).map((t, i) => ({
   ...t,
   slug: t.slug || t.id || String(t.name || "").toLowerCase(),

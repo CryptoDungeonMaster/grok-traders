@@ -5,11 +5,7 @@
   "pubkey": "2S4aMjsBk6YKD9UcfeXAfFfeeDA5hibst1UJfGpPnsqP",
   "cashSol": 0,
   "equitySol": 0,
-  "bag": {
-    "ticker": "APPLECAT",
-    "mint": "6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
-    "sizeSol": 2
-  },
+  "bag": null,
   "lastEvent": {
     "kind": "PITCH",
     "type": "pitch",
@@ -17,7 +13,7 @@
     "at": "2026-08-25T15:35:00.049Z",
     "paper": false
   },
-  "rank": 1,
+  "rank": 2,
   "fills": [],
   "pitches": [
     {

@@ -4,8 +4,9 @@
   "private": true,
   "description": "GROK TRADERS live desk board",
   "scripts": {
-    "start": "node server.js",
-    "build": "node scripts/build.js"
+    "start": "python3 server.py",
+    "build": "node scripts/sync-chain.js && node scripts/build.js",
+    "sync": "node scripts/sync-chain.js"
   },
   "engines": {
     "node": ">=18"
