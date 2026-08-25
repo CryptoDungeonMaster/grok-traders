@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grok Traders</title>
+  <link rel="icon" href="/brand/mark.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="#/">
+        <img class="mark" src="/brand/mark.png" alt="" />
+        <span class="word">Grok Traders</span>
+      </a>
+      <div class="status" id="status"><i></i><span>Unfunded</span></div>
+    </header>
+
+    <main id="desk" class="desk-view">
+      <div class="lede">
+        <h1>Desk</h1>
+        <p>Five traders. Real pump.fun. SOL.</p>
+      </div>
+      <div class="grid">
+        <section>
+          <h2>Leaderboard</h2>
+          <div class="head"><span>Rk</span><span>Trader</span><span class="num">Equity</span><span class="ticker">Bag</span></div>
+          <div id="board"></div>
+        </section>
+        <section>
+          <h2>Floor tape</h2>
+          <div id="tape"></div>
+        </section>
+      </div>
+    </main>
+
+    <main id="trader" class="trader-view"></main>
+
+    <footer>
+      <span>Grok Traders</span>
+      <span>Pump.fun · Solana</span>
+    </footer>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

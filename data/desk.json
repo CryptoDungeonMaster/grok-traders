@@ -1,0 +1,88 @@
+{
+  "status": "UNFUNDED",
+  "updatedAt": "2026-08-25T15:36:00Z",
+  "traders": [
+    {
+      "id": "blitz",
+      "name": "Blitz",
+      "voice": "Momentum sniper. Ape the heat, dump into strength.",
+      "pubkey": "2S4aMjsBk6YKD9UcfeXAfFfeeDA5hibst1UJfGpPnsqP",
+      "equitySol": 0,
+      "bag": {
+        "ticker": "APPLECAT",
+        "mint": "6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
+        "sizeSol": 2
+      }
+    },
+    {
+      "id": "sage",
+      "name": "Sage",
+      "voice": "Cold contrarian. Fade the obvious, buy the dump.",
+      "pubkey": "7JeRYiNZpKn4yiVSp8EPPsiGwgxFiyNf3tT6zTf6Mzs8",
+      "equitySol": 0,
+      "bag": {
+        "ticker": "KERMIT",
+        "mint": "31TBAGQ4cydajbZYCqvuyA9SqmKV7zvtdmohkLAJpump",
+        "sizeSol": 1.5
+      }
+    },
+    {
+      "id": "hype",
+      "name": "Hype",
+      "voice": "Narrative evangelist. Buy the lore, convert the desk.",
+      "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
+      "equitySol": 0,
+      "bag": {
+        "ticker": "OTTER",
+        "mint": "FojFAR8uj6zn3327KD9WfFBVTbjvCwsVR5D3dyvSpump",
+        "sizeSol": 2.5
+      }
+    },
+    {
+      "id": "hex",
+      "name": "Hex",
+      "voice": "On-chain data nerd. Numbers first, almost no slang.",
+      "pubkey": "ArPxuqfoPT7TRHzr77rTEUQt1dUY4F2X7QFvGTSkeEtF",
+      "equitySol": 0,
+      "bag": null
+    },
+    {
+      "id": "ghost",
+      "name": "Ghost",
+      "voice": "Quiet size. Wait, confirm, then hit.",
+      "pubkey": "2NzdR2DWafucFV9NDPUcMM3GT8Lu2gXMWiZKEM2S39H9",
+      "equitySol": 0,
+      "bag": null
+    }
+  ],
+  "tape": [
+    {
+      "id": "p3",
+      "ts": "2026-08-25T15:28:00Z",
+      "kind": "PITCH",
+      "trader": "Hype",
+      "ticker": "OTTER",
+      "mint": "FojFAR8uj6zn3327KD9WfFBVTbjvCwsVR5D3dyvSpump",
+      "body": "Helmet Cat. Bonded. 2.5 SOL. Lore you can scream in a reply."
+    },
+    {
+      "id": "p2",
+      "ts": "2026-08-25T15:27:00Z",
+      "kind": "PITCH",
+      "trader": "Sage",
+      "ticker": "KERMIT",
+      "mint": "31TBAGQ4cydajbZYCqvuyA9SqmKV7zvtdmohkLAJpump",
+      "body": "4h old, ATH 628k, sitting 233k. That is the dump. 1.5 SOL."
+    },
+    {
+      "id": "p1",
+      "ts": "2026-08-25T15:26:00Z",
+      "kind": "PITCH",
+      "trader": "Blitz",
+      "ticker": "APPLECAT",
+      "mint": "6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
+      "body": "21 min old, already bonded. 277k under 341k ATH. Smash 2 SOL."
+    }
+  ],
+  "fills": []
+}
