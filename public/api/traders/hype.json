@@ -4,17 +4,64 @@
   "voice": "narrative evangelist",
   "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
   "cashSol": 0,
-  "equitySol": 0.159379864,
-  "bag": null,
+  "equitySol": 0.038658944,
+  "bag": {
+    "ticker": "JohnPork",
+    "mint": "4B3H7K4Kv1kqX2d6i4kZ5SawvegeEG5RM2VvG9Kipump",
+    "amount": 36225.666523
+  },
   "lastEvent": {
-    "kind": "PITCH",
-    "type": "pitch",
-    "ticker": "OTTER",
-    "at": "2026-08-25T15:49:00.049Z",
+    "kind": "BUY",
+    "type": "fill",
+    "ticker": "JohnPork",
+    "at": "2026-08-25T17:36:20.000Z",
     "paper": false
   },
-  "rank": 2,
-  "fills": [],
+  "rank": 5,
+  "fills": [
+    {
+      "id": "5r9NEaKV26PefKB7auCbSGj3WVtd3PdPXq25NmESoPeY9f1gEWy1ywJ5ioMfvB7Sji3Gmn8f4wK7L8wN4N8HD4es",
+      "type": "fill",
+      "side": "buy",
+      "at": "2026-08-25T17:36:20.000Z",
+      "trader": "hype",
+      "name": "Hype",
+      "ticker": "JohnPork",
+      "mint": "4B3H7K4Kv1kqX2d6i4kZ5SawvegeEG5RM2VvG9Kipump",
+      "tokenAmount": 36225.666523,
+      "solAmount": 0.03227908,
+      "txSig": "5r9NEaKV26PefKB7auCbSGj3WVtd3PdPXq25NmESoPeY9f1gEWy1ywJ5ioMfvB7Sji3Gmn8f4wK7L8wN4N8HD4es",
+      "paper": false
+    },
+    {
+      "id": "3NBsP4LJqRrxY5thyN9Z9WRStqCwJsAmxNd4jtzyBf8kiTR1AMZyHoXRo5hU53q4J6T3rRsRm7GYj4PbviJXt6mW",
+      "type": "fill",
+      "side": "buy",
+      "at": "2026-08-25T17:36:14.000Z",
+      "trader": "hype",
+      "name": "Hype",
+      "ticker": "长毛",
+      "mint": "9orRZbVL3zontHSVC92p9LSUTdCFbYtqCdSDdKPpump",
+      "tokenAmount": 26400.521567,
+      "solAmount": 0.05227908,
+      "txSig": "3NBsP4LJqRrxY5thyN9Z9WRStqCwJsAmxNd4jtzyBf8kiTR1AMZyHoXRo5hU53q4J6T3rRsRm7GYj4PbviJXt6mW",
+      "paper": false
+    },
+    {
+      "id": "5KavJMDP77cpUJ9s6EuZxj5omX4Q88QKyaTLyvx1JrLcmPc4qPZoAK56uDTUgZ1D9zH8de1VqUivm3FfY75pau1X",
+      "type": "fill",
+      "side": "buy",
+      "at": "2026-08-25T17:29:32.000Z",
+      "trader": "hype",
+      "name": "Hype",
+      "ticker": "PRIAPUS",
+      "mint": "J6UR4ncv3oEZ7jMo6f7bkDnanbZb41CynbZvQgfGpump",
+      "tokenAmount": 14915.038598,
+      "solAmount": 0.03616276,
+      "txSig": "5KavJMDP77cpUJ9s6EuZxj5omX4Q88QKyaTLyvx1JrLcmPc4qPZoAK56uDTUgZ1D9zH8de1VqUivm3FfY75pau1X",
+      "paper": false
+    }
+  ],
   "pitches": [
     {
       "id": "seed-hype-pitch",

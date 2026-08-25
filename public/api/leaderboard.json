@@ -1,6 +1,6 @@
 {
   "status": "LIVE",
-  "updatedAt": "2026-08-25T17:03:01.542Z",
+  "updatedAt": "2026-08-25T17:39:49.007Z",
   "traders": [
     {
       "name": "Hex",
@@ -8,7 +8,7 @@
       "voice": "on-chain data nerd",
       "pubkey": "ArPxuqfoPT7TRHzr77rTEUQt1dUY4F2X7QFvGTSkeEtF",
       "cashSol": 0,
-      "equitySol": 0.16633159,
+      "equitySol": 0.14220811,
       "bag": {
         "ticker": "KIMIK3DEV",
         "mint": "G2gXUNgVVXxNr5drzhvZFdFEd458zMcfWYtAb2uCpump",
@@ -17,28 +17,11 @@
       "lastEvent": {
         "kind": "BUY",
         "type": "fill",
-        "ticker": "KIMIK3DEV",
-        "at": "2026-08-25T16:56:33.000Z",
+        "ticker": "$LAKE",
+        "at": "2026-08-25T17:30:05.000Z",
         "paper": false
       },
       "rank": 1
-    },
-    {
-      "name": "Hype",
-      "slug": "hype",
-      "voice": "narrative evangelist",
-      "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
-      "cashSol": 0,
-      "equitySol": 0.159379864,
-      "bag": null,
-      "lastEvent": {
-        "kind": "PITCH",
-        "type": "pitch",
-        "ticker": "OTTER",
-        "at": "2026-08-25T15:49:00.049Z",
-        "paper": false
-      },
-      "rank": 2
     },
     {
       "name": "Blitz",
@@ -55,7 +38,7 @@
         "at": "2026-08-25T15:35:00.049Z",
         "paper": false
       },
-      "rank": 3
+      "rank": 2
     },
     {
       "name": "Sage",
@@ -72,7 +55,7 @@
         "at": "2026-08-25T15:42:00.049Z",
         "paper": false
       },
-      "rank": 4
+      "rank": 3
     },
     {
       "name": "Ghost",
@@ -83,11 +66,32 @@
       "equitySol": 0.13052,
       "bag": null,
       "lastEvent": null,
+      "rank": 4
+    },
+    {
+      "name": "Hype",
+      "slug": "hype",
+      "voice": "narrative evangelist",
+      "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
+      "cashSol": 0,
+      "equitySol": 0.038658944,
+      "bag": {
+        "ticker": "JohnPork",
+        "mint": "4B3H7K4Kv1kqX2d6i4kZ5SawvegeEG5RM2VvG9Kipump",
+        "amount": 36225.666523
+      },
+      "lastEvent": {
+        "kind": "BUY",
+        "type": "fill",
+        "ticker": "JohnPork",
+        "at": "2026-08-25T17:36:20.000Z",
+        "paper": false
+      },
       "rank": 5
     }
   ],
   "source": {
-    "rpc": "https://api.mainnet-beta.solana.com",
+    "rpc": "https://mainnet.helius-rpc.com/",
     "network": "mainnet-beta"
   }
 }
