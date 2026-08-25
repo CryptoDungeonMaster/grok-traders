@@ -1,0 +1,26 @@
+{
+  "name": "grok-traders-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GROK TRADERS minimal brand film, rendered with Remotion",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts BrandFilm out/grok-traders.mp4",
+    "render:square": "remotion render src/index.ts BrandFilmSquare out/grok-traders-square.mp4",
+    "still": "remotion still src/index.ts BrandFilm out/poster.png --frame=330",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.517",
+    "@remotion/google-fonts": "4.0.517",
+    "@remotion/renderer": "4.0.517",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "remotion": "4.0.517"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
+    "typescript": "7.0.2"
+  }
+}
