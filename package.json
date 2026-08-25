@@ -5,6 +5,7 @@
   "description": "GROK TRADERS live desk board",
   "scripts": {
     "start": "python3 server.py",
+    "dev": "node scripts/dev.js",
     "build": "node scripts/sync-chain.js && node scripts/build.js",
     "sync": "node scripts/sync-chain.js"
   },

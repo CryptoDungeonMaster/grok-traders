@@ -128,13 +128,16 @@
     return null;
   }
 
+  // Extension-less paths hit the live handlers, which read the chain per request;
+  // the ".json" file is the snapshot baked at deploy time and only gets used when
+  // those handlers are unreachable.
   async function getJson(path) {
     var urls = [path];
     if (path.indexOf(".json") === -1) urls.push(path + ".json");
     var lastErr = new Error("desk unreachable");
     for (var i = 0; i < urls.length; i++) {
       try {
-        var res = await fetch(urls[i], { headers: { Accept: "application/json" } });
+        var res = await fetch(urls[i], { headers: { Accept: "application/json" }, cache: "no-store" });
         if (!res.ok) { lastErr = new Error("desk " + res.status); continue; }
         var data = await res.json();
         return data;
@@ -259,8 +262,8 @@
   }
 
   async function loadFloor() {
-    var board = await getJson("/api/leaderboard.json");
-    var tape = await getJson("/api/tape.json");
+    var board = await getJson("/api/leaderboard");
+    var tape = await getJson("/api/tape");
     setStatus(board.status);
     paintBook(board.traders);
     paintTicks(document.getElementById("tape"), tape.items, "No prints. The tape is clean.");
@@ -287,16 +290,16 @@
       var href = (a.getAttribute("href") || "").replace(/\.html$/, "");
       if (href === "/" + slug || href === "/trader/" + slug || href === "/trader.html?seat=" + slug) a.classList.add("is-on");
     });
-    var board = await getJson("/api/leaderboard.json");
+    var board = await getJson("/api/leaderboard");
     var listed = (board.traders || []).find(function (x) { return x.slug === slug; });
     // The seat file is the only source that carries this trader's fills, so it is
     // always fetched; the board entry just backfills if that request fails.
-    var seat = await getJson("/api/traders/" + encodeURIComponent(slug) + ".json").catch(function () { return null; });
+    var seat = await getJson("/api/traders/" + encodeURIComponent(slug)).catch(function () { return null; });
     var t = seat || listed;
     if (!t || !t.pubkey) throw new Error("unknown seat");
     var mine = function (e) { return e.trader === slug || e.name === t.name; };
     if (!t.fills || !t.pitches) {
-      var tape = await getJson("/api/tape.json").catch(function () { return { items: [] }; });
+      var tape = await getJson("/api/tape").catch(function () { return { items: [] }; });
       var items = (tape.items || []).filter(mine);
       t.fills = t.fills || items.filter(function (e) { return e.type === "fill"; });
       t.pitches = t.pitches || items.filter(function (e) { return e.type !== "fill"; });
