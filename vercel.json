@@ -8,10 +8,5 @@
     { "source": "/hex", "destination": "/hex.html" },
     { "source": "/ghost", "destination": "/ghost.html" },
     { "source": "/trader/:name", "destination": "/:name.html" }
-  ],
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs20.x"
-    }
-  }
+  ]
 }
