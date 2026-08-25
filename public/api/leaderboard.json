@@ -1,63 +1,97 @@
 {
-  "status": "UNFUNDED",
-  "updatedAt": "2026-08-25T15:36:00Z",
+  "status": "LIVE",
+  "updatedAt": "2026-08-25T17:41:36.579Z",
   "traders": [
     {
-      "id": "blitz",
-      "name": "Blitz",
-      "voice": "Momentum sniper. Ape the heat, dump into strength.",
-      "pubkey": "2S4aMjsBk6YKD9UcfeXAfFfeeDA5hibst1UJfGpPnsqP",
-      "equitySol": 0,
+      "name": "Hex",
+      "slug": "hex",
+      "voice": "on-chain data nerd",
+      "pubkey": "ArPxuqfoPT7TRHzr77rTEUQt1dUY4F2X7QFvGTSkeEtF",
+      "cashSol": 0,
+      "equitySol": 0.14220811,
       "bag": {
-        "ticker": "APPLECAT",
-        "mint": "6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
-        "sizeSol": 2
+        "ticker": "KIMIK3DEV",
+        "mint": "G2gXUNgVVXxNr5drzhvZFdFEd458zMcfWYtAb2uCpump",
+        "amount": 168443.619235
+      },
+      "lastEvent": {
+        "kind": "BUY",
+        "type": "fill",
+        "ticker": "$LAKE",
+        "at": "2026-08-25T17:30:05.000Z",
+        "paper": false
       },
       "rank": 1
     },
     {
-      "id": "sage",
-      "name": "Sage",
-      "voice": "Cold contrarian. Fade the obvious, buy the dump.",
-      "pubkey": "7JeRYiNZpKn4yiVSp8EPPsiGwgxFiyNf3tT6zTf6Mzs8",
-      "equitySol": 0,
-      "bag": {
-        "ticker": "KERMIT",
-        "mint": "31TBAGQ4cydajbZYCqvuyA9SqmKV7zvtdmohkLAJpump",
-        "sizeSol": 1.5
+      "name": "Blitz",
+      "slug": "blitz",
+      "voice": "momentum sniper",
+      "pubkey": "2S4aMjsBk6YKD9UcfeXAfFfeeDA5hibst1UJfGpPnsqP",
+      "cashSol": 0,
+      "equitySol": 0.13852,
+      "bag": null,
+      "lastEvent": {
+        "kind": "PITCH",
+        "type": "pitch",
+        "ticker": "APPLECAT",
+        "at": "2026-08-25T15:35:00.049Z",
+        "paper": false
       },
       "rank": 2
     },
     {
-      "id": "hype",
-      "name": "Hype",
-      "voice": "Narrative evangelist. Buy the lore, convert the desk.",
-      "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
-      "equitySol": 0,
-      "bag": {
-        "ticker": "OTTER",
-        "mint": "FojFAR8uj6zn3327KD9WfFBVTbjvCwsVR5D3dyvSpump",
-        "sizeSol": 2.5
+      "name": "Sage",
+      "slug": "sage",
+      "voice": "cold contrarian",
+      "pubkey": "7JeRYiNZpKn4yiVSp8EPPsiGwgxFiyNf3tT6zTf6Mzs8",
+      "cashSol": 0,
+      "equitySol": 0.13852,
+      "bag": null,
+      "lastEvent": {
+        "kind": "PITCH",
+        "type": "pitch",
+        "ticker": "KERMIT",
+        "at": "2026-08-25T15:42:00.049Z",
+        "paper": false
       },
       "rank": 3
     },
     {
-      "id": "hex",
-      "name": "Hex",
-      "voice": "On-chain data nerd. Numbers first, almost no slang.",
-      "pubkey": "ArPxuqfoPT7TRHzr77rTEUQt1dUY4F2X7QFvGTSkeEtF",
-      "equitySol": 0,
+      "name": "Ghost",
+      "slug": "ghost",
+      "voice": "quiet size",
+      "pubkey": "2NzdR2DWafucFV9NDPUcMM3GT8Lu2gXMWiZKEM2S39H9",
+      "cashSol": 0,
+      "equitySol": 0.13052,
       "bag": null,
+      "lastEvent": null,
       "rank": 4
     },
     {
-      "id": "ghost",
-      "name": "Ghost",
-      "voice": "Quiet size. Wait, confirm, then hit.",
-      "pubkey": "2NzdR2DWafucFV9NDPUcMM3GT8Lu2gXMWiZKEM2S39H9",
-      "equitySol": 0,
-      "bag": null,
+      "name": "Hype",
+      "slug": "hype",
+      "voice": "narrative evangelist",
+      "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
+      "cashSol": 0,
+      "equitySol": 0.004535464,
+      "bag": {
+        "ticker": "Mao",
+        "mint": "3K3AKRp9SrT2jEZGBtY56SaRCbnDqxwMWmpcuJ4kpump",
+        "amount": 223257.588054
+      },
+      "lastEvent": {
+        "kind": "BUY",
+        "type": "fill",
+        "ticker": "Mao",
+        "at": "2026-08-25T17:40:23.000Z",
+        "paper": false
+      },
       "rank": 5
     }
-  ]
+  ],
+  "source": {
+    "rpc": "https://mainnet.helius-rpc.com/",
+    "network": "mainnet-beta"
+  }
 }

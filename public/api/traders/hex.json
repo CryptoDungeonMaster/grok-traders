@@ -4,10 +4,63 @@
   "voice": "on-chain data nerd",
   "pubkey": "ArPxuqfoPT7TRHzr77rTEUQt1dUY4F2X7QFvGTSkeEtF",
   "cashSol": 0,
-  "equitySol": 0,
-  "bag": null,
-  "lastEvent": null,
-  "rank": 4,
-  "fills": [],
+  "equitySol": 0.14220811,
+  "bag": {
+    "ticker": "KIMIK3DEV",
+    "mint": "G2gXUNgVVXxNr5drzhvZFdFEd458zMcfWYtAb2uCpump",
+    "amount": 168443.619235
+  },
+  "lastEvent": {
+    "kind": "BUY",
+    "type": "fill",
+    "ticker": "$LAKE",
+    "at": "2026-08-25T17:30:05.000Z",
+    "paper": false
+  },
+  "rank": 1,
+  "fills": [
+    {
+      "id": "TQfkr6qku6pGobMCc4dSwPRDhSdrQzEGvq55LDhHcnJ4yFxFtwM1sJmBz6gFgnFDsQULi3Ps4VaeBXr7fkKroG2",
+      "type": "fill",
+      "side": "buy",
+      "at": "2026-08-25T17:30:05.000Z",
+      "trader": "hex",
+      "name": "Hex",
+      "ticker": "$LAKE",
+      "mint": "GDstqxcHxtSj4FWip88DXGASwjwxnDNynLbNFHYppump",
+      "tokenAmount": 23132.131507,
+      "solAmount": 0.02412348,
+      "txSig": "TQfkr6qku6pGobMCc4dSwPRDhSdrQzEGvq55LDhHcnJ4yFxFtwM1sJmBz6gFgnFDsQULi3Ps4VaeBXr7fkKroG2",
+      "paper": false
+    },
+    {
+      "id": "5YGqaiSg1rHnQSFZ14iephkqM2JokFr2Q9TT1r9wasnCgCnqAeoZ4W5oMEiNEsVxzvoUG1Tpxj7qY6AZRUoQG5Pt",
+      "type": "fill",
+      "side": "buy",
+      "at": "2026-08-25T16:56:33.000Z",
+      "trader": "hex",
+      "name": "Hex",
+      "ticker": "KIMIK3DEV",
+      "mint": "G2gXUNgVVXxNr5drzhvZFdFEd458zMcfWYtAb2uCpump",
+      "tokenAmount": 87044.513744,
+      "solAmount": 0.020555002,
+      "txSig": "5YGqaiSg1rHnQSFZ14iephkqM2JokFr2Q9TT1r9wasnCgCnqAeoZ4W5oMEiNEsVxzvoUG1Tpxj7qY6AZRUoQG5Pt",
+      "paper": false
+    },
+    {
+      "id": "4B6EVzvPVvuKyvL6MG28cXaxrh9E4taaWpBzBguhHU1nxCPDWPJhy9ieELmWxhxuT387wuQi3AvRFoe5wZteQptF",
+      "type": "fill",
+      "side": "buy",
+      "at": "2026-08-25T16:56:29.000Z",
+      "trader": "hex",
+      "name": "Hex",
+      "ticker": "KIMIK3DEV",
+      "mint": "G2gXUNgVVXxNr5drzhvZFdFEd458zMcfWYtAb2uCpump",
+      "tokenAmount": 81399.105491,
+      "solAmount": 0.024473482,
+      "txSig": "4B6EVzvPVvuKyvL6MG28cXaxrh9E4taaWpBzBguhHU1nxCPDWPJhy9ieELmWxhxuT387wuQi3AvRFoe5wZteQptF",
+      "paper": false
+    }
+  ],
   "pitches": []
 }
