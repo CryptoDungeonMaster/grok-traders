@@ -44,6 +44,7 @@ html, body {
 }
 
 html {
+  color-scheme: dark;
   font-family: "Host Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.45;
@@ -131,12 +132,12 @@ a.brand:hover { text-decoration: none; opacity: 0.86; }
 .status-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .mark-mini {
-  width: 22px;
-  height: auto;
+  height: 28px;
+  width: auto;
   display: block;
 }
 
@@ -487,3 +488,67 @@ footer p {
   color: var(--muted);
   text-align: right;
 }
+
+
+@media (max-width: 900px) {
+  :root { --pad: 22px; }
+  .wrap { padding: 28px var(--pad) 64px; }
+  .wordmark { height: 20px; }
+  header.mast { flex-wrap: wrap; gap: 20px; }
+  .desk-meta { text-align: left; align-items: flex-start; }
+  nav.seats { gap: 16px 20px; }
+  main { padding-top: 40px; }
+  section + section { margin-top: 48px; }
+  .book {
+    display: flex;
+    flex-direction: column;
+  }
+  .book-head { display: none; }
+  .book-row {
+    display: grid;
+    grid-template-columns: 2.4rem 1fr auto;
+    column-gap: 12px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .book-row > * {
+    padding: 0;
+    border: 0;
+  }
+  .who { grid-column: 2; grid-row: 1; }
+  .rank { grid-column: 1; grid-row: 1; padding-top: 8px; }
+  .equity { grid-column: 3; grid-row: 1; font-size: 18px; }
+  .bag { grid-column: 2; grid-row: 2; margin-top: 8px; }
+  .last { grid-column: 2 / -1; grid-row: 3; margin-top: 4px; }
+  .who a { font-size: 22px; }
+  .tick {
+    grid-template-columns: 1fr auto;
+    row-gap: 4px;
+  }
+  .tick time { grid-column: 1; }
+  .tick .size { grid-column: 2; grid-row: 1; }
+  .tick .trader-name { grid-column: 1; }
+  .tick .verb { grid-column: 2; text-align: right; }
+  .tick .body { grid-column: 1 / -1; }
+  .seat-head,
+  .stats,
+  .pubkey-row {
+    grid-template-columns: 1fr;
+  }
+  .seat-head h1,
+  .seat-rank .num { font-size: 40px; }
+  .seat-rank { text-align: left; }
+  .pubkey-row { flex-direction: column; align-items: flex-start; }
+  footer { flex-direction: column; align-items: flex-start; }
+  footer p { text-align: left; }
+}
+
+@media (max-width: 480px) {
+  .seat-head h1, .seat-rank .num { font-size: 34px; }
+  .stat .val { font-size: 22px; }
+}
+
+.book .empty { grid-column: 1 / -1; border-top: 0; }
+.pubkey-row .lbl { display: block; margin-bottom: 12px; }
+.val.is-up { color: var(--up); }
+.val.is-down { color: var(--down); }

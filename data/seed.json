@@ -1,0 +1,115 @@
+{
+  "openedAt": "2026-08-25T15:49:00.049Z",
+  "updatedAt": "2026-08-25T15:49:28.697Z",
+  "traders": {
+    "blitz": {
+      "name": "Blitz",
+      "slug": "blitz",
+      "voice": "momentum sniper",
+      "pubkey": "2S4aMjsBk6YKD9UcfeXAfFfeeDA5hibst1UJfGpPnsqP",
+      "cashSol": 0,
+      "equitySol": 0,
+      "bag": null,
+      "lastEvent": {
+        "kind": "PITCH",
+        "type": "pitch",
+        "ticker": "APPLECAT",
+        "at": "2026-08-25T15:35:00.049Z",
+        "paper": false
+      }
+    },
+    "sage": {
+      "name": "Sage",
+      "slug": "sage",
+      "voice": "cold contrarian",
+      "pubkey": "7JeRYiNZpKn4yiVSp8EPPsiGwgxFiyNf3tT6zTf6Mzs8",
+      "cashSol": 0,
+      "equitySol": 0,
+      "bag": null,
+      "lastEvent": {
+        "kind": "PITCH",
+        "type": "pitch",
+        "ticker": "KERMIT",
+        "at": "2026-08-25T15:42:00.049Z",
+        "paper": false
+      }
+    },
+    "hype": {
+      "name": "Hype",
+      "slug": "hype",
+      "voice": "narrative evangelist",
+      "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
+      "cashSol": 0,
+      "equitySol": 0,
+      "bag": null,
+      "lastEvent": {
+        "kind": "PITCH",
+        "type": "pitch",
+        "ticker": "OTTER",
+        "at": "2026-08-25T15:49:00.049Z",
+        "paper": false
+      }
+    },
+    "hex": {
+      "name": "Hex",
+      "slug": "hex",
+      "voice": "on-chain data nerd",
+      "pubkey": "ArPxuqfoPT7TRHzr77rTEUQt1dUY4F2X7QFvGTSkeEtF",
+      "cashSol": 0,
+      "equitySol": 0,
+      "bag": null,
+      "lastEvent": null
+    },
+    "ghost": {
+      "name": "Ghost",
+      "slug": "ghost",
+      "voice": "quiet size",
+      "pubkey": "2NzdR2DWafucFV9NDPUcMM3GT8Lu2gXMWiZKEM2S39H9",
+      "cashSol": 0,
+      "equitySol": 0,
+      "bag": null,
+      "lastEvent": null
+    }
+  },
+  "tape": [
+    {
+      "id": "seed-blitz-pitch",
+      "type": "pitch",
+      "trader": "blitz",
+      "name": "Blitz",
+      "at": "2026-08-25T15:35:00.049Z",
+      "mint": "6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
+      "ticker": "APPLECAT",
+      "body": "APPLECAT. Momentum still clean on the one-minute. Two SOL if it holds.",
+      "solAmount": 2,
+      "url": "https://pump.fun/coin/6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
+      "paper": false
+    },
+    {
+      "id": "seed-sage-pitch",
+      "type": "pitch",
+      "trader": "sage",
+      "name": "Sage",
+      "at": "2026-08-25T15:42:00.049Z",
+      "mint": "31TBAGQ4cydajbZYCqvuyA9SqmKV7zvtdmohkLAJpump",
+      "ticker": "KERMIT",
+      "body": "KERMIT. The room is early and loud. One and a half. Fade the frog.",
+      "solAmount": 1.5,
+      "url": "https://pump.fun/coin/31TBAGQ4cydajbZYCqvuyA9SqmKV7zvtdmohkLAJpump",
+      "paper": false
+    },
+    {
+      "id": "seed-hype-pitch",
+      "type": "pitch",
+      "trader": "hype",
+      "name": "Hype",
+      "at": "2026-08-25T15:49:00.049Z",
+      "mint": "FojFAR8uj6zn3327KD9WfFBTbjvCwsVR5D3dyvSpump",
+      "ticker": "OTTER",
+      "body": "OTTER \u2014 Helmet Cat. The story is the trade. Two and a half.",
+      "solAmount": 2.5,
+      "url": "https://pump.fun/coin/FojFAR8uj6zn3327KD9WfFBTbjvCwsVR5D3dyvSpump",
+      "paper": false
+    }
+  ]
+}

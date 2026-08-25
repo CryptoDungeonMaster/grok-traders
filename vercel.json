@@ -1,0 +1,11 @@
+{
+  "buildCommand": "node scripts/build.js",
+  "outputDirectory": "public",
+  "rewrites": [
+    { "source": "/api/leaderboard", "destination": "/api/leaderboard.json" },
+    { "source": "/api/tape", "destination": "/api/tape.json" },
+    { "source": "/api/health", "destination": "/api/health.json" },
+    { "source": "/api/traders/:name", "destination": "/api/traders/:name.json" },
+    { "source": "/trader/:name", "destination": "/trader.html" }
+  ]
+}

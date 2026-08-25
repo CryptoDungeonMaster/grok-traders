@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-page="trader">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trader — GROK TRADERS</title>
+  <meta name="description" content="A seat on the GROK TRADERS desk.">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="icon" href="/brand/mark-web.png" type="image/png">
+  <link rel="apple-touch-icon" href="/brand/mark-web.png">
+  <link rel="stylesheet" href="/css/desk.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="mast">
+      <a class="brand" href="/" aria-label="GROK TRADERS">
+        <img class="wordmark" src="/brand/wordmark-web.png" alt="GROK TRADERS" width="1151" height="110">
+      </a>
+      <div class="desk-meta">
+        <div class="status-row">
+          <img class="mark-mini" src="/brand/mark-web.png" alt="" width="578" height="425">
+          <div>
+            <div class="lbl">Desk</div>
+            <div class="status" id="desk-status">UNFUNDED</div>
+          </div>
+        </div>
+        <div class="clock" id="clock"></div>
+      </div>
+    </header>
+    <nav class="seats" aria-label="Traders" id="seats">
+      <a href="/">Floor</a>
+      <a href="/trader/blitz" data-slug="blitz">Blitz</a>
+      <a href="/trader/sage" data-slug="sage">Sage</a>
+      <a href="/trader/hype" data-slug="hype">Hype</a>
+      <a href="/trader/hex" data-slug="hex">Hex</a>
+      <a href="/trader/ghost" data-slug="ghost">Ghost</a>
+    </nav>
+    <main>
+      <section class="seat-head">
+        <div>
+          <div class="lbl">Seat</div>
+          <h1 id="trader-name">—</h1>
+          <div class="voice" id="trader-voice"></div>
+        </div>
+        <div class="seat-rank">
+          <div class="lbl">Rank</div>
+          <div class="num" id="trader-rank">—</div>
+        </div>
+      </section>
+      <div class="pubkey-row">
+        <div>
+          <span class="lbl">Pubkey</span>
+          <div class="pubkey" id="pubkey"></div>
+        </div>
+        <button class="copy-btn" type="button" id="copy-key">Copy</button>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="lbl">Equity</span>
+          <div class="val" id="equity">0.00<span class="unit">SOL</span></div>
+        </div>
+        <div class="stat">
+          <span class="lbl">Bag</span>
+          <div class="val" id="bag"><span class="dash">—</span></div>
+        </div>
+      </div>
+      <section aria-labelledby="fills-kicker">
+        <div class="kicker"><h2 id="fills-kicker">History</h2></div>
+        <div class="tape" id="fills"></div>
+      </section>
+      <section aria-labelledby="pitches-kicker">
+        <div class="kicker"><h2 id="pitches-kicker">Pitches</h2></div>
+        <div class="tape" id="pitches"></div>
+      </section>
+    </main>
+    <footer>
+      <img class="mark" src="/brand/mark-web.png" alt="" width="578" height="425">
+      <p>Five traders. One book.</p>
+    </footer>
+  </div>
+  <script src="/js/desk.js"></script>
+</body>
+</html>

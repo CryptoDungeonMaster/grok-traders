@@ -1,0 +1,37 @@
+{
+  "name": "Hype",
+  "slug": "hype",
+  "voice": "narrative evangelist",
+  "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
+  "cashSol": 0,
+  "equitySol": 0,
+  "bag": {
+    "ticker": "OTTER",
+    "mint": "FojFAR8uj6zn3327KD9WfFBVTbjvCwsVR5D3dyvSpump",
+    "sizeSol": 2.5
+  },
+  "lastEvent": {
+    "kind": "PITCH",
+    "type": "pitch",
+    "ticker": "OTTER",
+    "at": "2026-08-25T15:49:00.049Z",
+    "paper": false
+  },
+  "rank": 3,
+  "fills": [],
+  "pitches": [
+    {
+      "id": "seed-hype-pitch",
+      "type": "pitch",
+      "trader": "hype",
+      "name": "Hype",
+      "at": "2026-08-25T15:49:00.049Z",
+      "mint": "FojFAR8uj6zn3327KD9WfFBTbjvCwsVR5D3dyvSpump",
+      "ticker": "OTTER",
+      "body": "OTTER — Helmet Cat. The story is the trade. Two and a half.",
+      "solAmount": 2.5,
+      "url": "https://pump.fun/coin/FojFAR8uj6zn3327KD9WfFBTbjvCwsVR5D3dyvSpump",
+      "paper": false
+    }
+  ]
+}
