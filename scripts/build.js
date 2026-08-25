@@ -61,4 +61,10 @@ for (const t of traders) {
   );
 }
 
+
+const tpl = fs.readFileSync(path.join(root, "public/trader.html"), "utf8");
+for (const slug of ["blitz", "sage", "hype", "hex", "ghost"]) {
+  const html = tpl.replace('data-seat=""', 'data-seat="' + slug + '"');
+  fs.writeFileSync(path.join(root, "public", slug + ".html"), html);
+}
 console.log("GROK TRADERS static build ok");

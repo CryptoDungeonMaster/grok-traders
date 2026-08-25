@@ -3,6 +3,8 @@
 
   var TZ = "Europe/Istanbul";
   var page = document.documentElement.getAttribute("data-page");
+  var SEATS = ["blitz", "sage", "hype", "hex", "ghost"];
+  function seatHref(slug) { return "/" + slug; }
 
   function pad2(n) { return String(n).padStart(2, "0"); }
 
@@ -127,7 +129,7 @@
       row.appendChild(el("div", "rank", pad2(t.rank)));
       var who = el("div", "who");
       var name = el("a", "", t.name);
-      name.href = "/trader.html?seat=" + t.slug;
+      name.href = seatHref(t.slug);
       who.appendChild(name);
       who.appendChild(el("div", "voice", t.voice));
       var wal = el("div", "wallet", t.pubkey || "");
@@ -166,7 +168,7 @@
       time.dateTime = item.at || "";
       tick.appendChild(time);
       var name = el("a", "trader-name", item.name || item.trader);
-      name.href = "/trader.html?seat=" + (item.trader || "");
+      name.href = seatHref(item.trader || "");
       tick.appendChild(name);
       tick.appendChild(el("div", "verb", verbOf(item)));
       var body = el("div", "body");
@@ -217,19 +219,23 @@
   }
 
   function slugFromPath() {
-    var q = new URLSearchParams(location.search).get("seat");
-    if (q) return q.toLowerCase();
+    var baked = (document.documentElement.getAttribute("data-seat") || "").toLowerCase();
+    if (SEATS.indexOf(baked) !== -1) return baked;
+    var hash = (location.hash || "").replace(/^#/, "").toLowerCase();
+    if (SEATS.indexOf(hash) !== -1) return hash;
+    var q = (new URLSearchParams(location.search).get("seat") || "").toLowerCase();
+    if (SEATS.indexOf(q) !== -1) return q;
     var parts = location.pathname.replace(/\/+$/, "").split("/");
-    var last = (parts[parts.length - 1] || "").toLowerCase();
-    if (last && last !== "trader.html" && last !== "trader" && last.indexOf(".") === -1) return last;
+    var last = (parts[parts.length - 1] || "").toLowerCase().replace(/\.html$/, "");
+    if (SEATS.indexOf(last) !== -1) return last;
     return "";
   }
 
   async function loadTrader() {
     var slug = slugFromPath();
     document.querySelectorAll("nav.seats a").forEach(function (a) {
-      var href = a.getAttribute("href") || "";
-      if (href === "/trader/" + slug || href === "/trader.html?seat=" + slug) a.classList.add("is-on");
+      var href = (a.getAttribute("href") || "").replace(/\.html$/, "");
+      if (href === "/" + slug || href === "/trader/" + slug || href === "/trader.html?seat=" + slug) a.classList.add("is-on");
     });
     var board = await getJson("/api/leaderboard.json");
     var t = (board.traders || []).find(function (x) { return x.slug === slug; });
