@@ -102,10 +102,8 @@ module.exports = async (req, res) => {
   const rpcUrl = process.env.SOLANA_RPC_URL;
   
   if (!rpcUrl) {
-    return res.status(503).json({
-      error: "Service unavailable",
-      message: "SOLANA_RPC_URL environment variable is not set. Please configure it in Vercel project settings."
-    });
+    const fallback = getFallbackData();
+    return res.status(200).json(fallback);
   }
   
   try {
