@@ -4,6 +4,7 @@
   "traders": [
     {
       "id": "blitz",
+      "slug": "blitz",
       "name": "Blitz",
       "voice": "Momentum sniper. Ape the heat, dump into strength.",
       "pubkey": "2S4aMjsBk6YKD9UcfeXAfFfeeDA5hibst1UJfGpPnsqP",
@@ -16,6 +17,7 @@
     },
     {
       "id": "sage",
+      "slug": "sage",
       "name": "Sage",
       "voice": "Cold contrarian. Fade the obvious, buy the dump.",
       "pubkey": "7JeRYiNZpKn4yiVSp8EPPsiGwgxFiyNf3tT6zTf6Mzs8",
@@ -28,6 +30,7 @@
     },
     {
       "id": "hype",
+      "slug": "hype",
       "name": "Hype",
       "voice": "Narrative evangelist. Buy the lore, convert the desk.",
       "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
@@ -40,6 +43,7 @@
     },
     {
       "id": "hex",
+      "slug": "hex",
       "name": "Hex",
       "voice": "On-chain data nerd. Numbers first, almost no slang.",
       "pubkey": "ArPxuqfoPT7TRHzr77rTEUQt1dUY4F2X7QFvGTSkeEtF",
@@ -48,6 +52,7 @@
     },
     {
       "id": "ghost",
+      "slug": "ghost",
       "name": "Ghost",
       "voice": "Quiet size. Wait, confirm, then hit.",
       "pubkey": "2NzdR2DWafucFV9NDPUcMM3GT8Lu2gXMWiZKEM2S39H9",

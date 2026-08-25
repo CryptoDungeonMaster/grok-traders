@@ -1,6 +1,5 @@
 {
   "buildCommand": "node scripts/build.js",
-  "outputDirectory": "public",
   "cleanUrls": false,
   "rewrites": [
     { "source": "/blitz", "destination": "/blitz.html" },
@@ -8,10 +7,11 @@
     { "source": "/hype", "destination": "/hype.html" },
     { "source": "/hex", "destination": "/hex.html" },
     { "source": "/ghost", "destination": "/ghost.html" },
-    { "source": "/api/leaderboard", "destination": "/api/leaderboard.json" },
-    { "source": "/api/tape", "destination": "/api/tape.json" },
-    { "source": "/api/health", "destination": "/api/health.json" },
-    { "source": "/api/traders/:name", "destination": "/api/traders/:name.json" },
     { "source": "/trader/:name", "destination": "/:name.html" }
-  ]
+  ],
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
 }

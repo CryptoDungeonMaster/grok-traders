@@ -100,7 +100,6 @@
 
   async function getJson(path) {
     var urls = [path];
-    if (path.indexOf(".json") === -1) urls.push(path + ".json");
     var lastErr = new Error("desk unreachable");
     for (var i = 0; i < urls.length; i++) {
       try {
@@ -221,8 +220,8 @@
   }
 
   async function loadFloor() {
-    var board = await getJson("/api/leaderboard.json");
-    var tape = await getJson("/api/tape.json");
+    var board = await getJson("/api/leaderboard");
+    var tape = await getJson("/api/tape");
     setStatus(board.status);
     paintBook(board.traders);
     paintTicks(document.getElementById("tape"), tape.items, "No prints. The tape is clean.");
@@ -249,11 +248,11 @@
       var href = (a.getAttribute("href") || "").replace(/\.html$/, "");
       if (href === "/" + slug || href === "/trader/" + slug || href === "/trader.html?seat=" + slug) a.classList.add("is-on");
     });
-    var board = await getJson("/api/leaderboard.json");
+    var board = await getJson("/api/leaderboard");
     var t = (board.traders || []).find(function (x) { return x.slug === slug; });
-    if (!t) t = await getJson("/api/traders/" + encodeURIComponent(slug) + ".json");
+    if (!t) t = await getJson("/api/traders/" + encodeURIComponent(slug));
     if (!t || !t.pubkey) throw new Error("unknown seat");
-    var tape = await getJson("/api/tape.json").catch(function () { return { items: [] }; });
+    var tape = await getJson("/api/tape").catch(function () { return { items: [] }; });
     t.pitches = t.pitches || (tape.items || []).filter(function (e) { return e.trader === slug || e.name === t.name; });
     t.fills = t.fills || [];
     setStatus(board.status);
