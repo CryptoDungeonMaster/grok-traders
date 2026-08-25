@@ -35,6 +35,7 @@ for (const [slug, bag] of Object.entries(bags)) {
 
 const traders = Object.values(desk.traders).map((t, i) => ({
   ...t,
+  slug: t.slug || t.id || String(t.name || "").toLowerCase(),
   rank: i + 1
 })).sort((a, b) => (b.equitySol || 0) - (a.equitySol || 0))
   .map((t, i) => ({ ...t, rank: i + 1 }));
@@ -48,19 +49,39 @@ const tape = { items: desk.tape || [] };
 
 const api = path.join(root, "public/api");
 fs.mkdirSync(path.join(api, "traders"), { recursive: true });
-fs.writeFileSync(path.join(api, "leaderboard.json"), JSON.stringify(board, null, 2) + "\n");
-fs.writeFileSync(path.join(api, "tape.json"), JSON.stringify(tape, null, 2) + "\n");
-fs.writeFileSync(path.join(api, "health.json"), JSON.stringify({ ok: true, status: board.status }, null, 2) + "\n");
 
+// Published API files are the live desk state; the seed only fills in gaps so a
+// redeploy cannot roll the board back to opening prices.
+function publish(rel, value) {
+  const file = path.join(api, rel);
+  if (fs.existsSync(file)) {
+    try {
+      return JSON.parse(fs.readFileSync(file, "utf8"));
+    } catch (err) {
+      console.warn("rewriting unreadable " + rel);
+    }
+  }
+  fs.writeFileSync(file, JSON.stringify(value, null, 2) + "\n");
+  return value;
+}
+
+const liveBoard = publish("leaderboard.json", board);
+const liveTape = publish("tape.json", tape);
+publish("health.json", { ok: true, status: liveBoard.status });
+
+const snapshot = { board: liveBoard, tape: liveTape, traders: {} };
 for (const t of traders) {
   const fills = [];
   const pitches = (desk.tape || []).filter((e) => e.trader === t.slug || e.name === t.name);
-  fs.writeFileSync(
-    path.join(api, "traders", t.slug + ".json"),
-    JSON.stringify({ ...t, fills, pitches }, null, 2) + "\n"
+  snapshot.traders[t.slug] = publish(
+    path.join("traders", t.slug + ".json"),
+    { ...t, fills, pitches }
   );
 }
-
+fs.writeFileSync(
+  path.join(root, "public/js/snapshot.js"),
+  "window.__DESK__ = " + JSON.stringify(snapshot) + ";\n"
+);
 
 const tpl = fs.readFileSync(path.join(root, "public/trader.html"), "utf8");
 for (const slug of ["blitz", "sage", "hype", "hex", "ghost"]) {

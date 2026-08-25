@@ -98,6 +98,18 @@
     return m.slice(0, 4) + "…" + m.slice(-4);
   }
 
+  // The desk is fully known at build time and baked into /js/snapshot.js, so a
+  // failed request degrades to stale data instead of an empty board.
+  function baked(path) {
+    var snap = window.__DESK__;
+    if (!snap) return null;
+    if (path.indexOf("/api/leaderboard") === 0) return snap.board || null;
+    if (path.indexOf("/api/tape") === 0) return snap.tape || null;
+    var m = path.match(/^\/api\/traders\/([^/.]+)/);
+    if (m) return (snap.traders || {})[decodeURIComponent(m[1])] || null;
+    return null;
+  }
+
   async function getJson(path) {
     var urls = [path];
     var lastErr = new Error("desk unreachable");
@@ -117,6 +129,8 @@
         return data;
       } catch (err) { lastErr = err; }
     }
+    var fallback = baked(path);
+    if (fallback) return fallback;
     throw lastErr;
   }
 
