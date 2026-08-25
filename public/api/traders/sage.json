@@ -4,7 +4,7 @@
   "voice": "cold contrarian",
   "pubkey": "7JeRYiNZpKn4yiVSp8EPPsiGwgxFiyNf3tT6zTf6Mzs8",
   "cashSol": 0,
-  "equitySol": 0,
+  "equitySol": 0.02,
   "bag": null,
   "lastEvent": {
     "kind": "PITCH",
@@ -13,7 +13,7 @@
     "at": "2026-08-25T15:42:00.049Z",
     "paper": false
   },
-  "rank": 3,
+  "rank": 4,
   "fills": [],
   "pitches": [
     {

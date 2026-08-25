@@ -23,7 +23,10 @@
   function fmtSol(n) {
     var x = Number(n);
     if (!Number.isFinite(x)) x = 0;
-    return x.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    // Sub-1 SOL balances round away to 0.00 at two decimals, which reads as an
+    // unfunded wallet.
+    var dp = x !== 0 && Math.abs(x) < 1 ? 4 : 2;
+    return x.toLocaleString("en-US", { minimumFractionDigits: dp, maximumFractionDigits: dp });
   }
 
   function partsInIstanbul(iso) {
