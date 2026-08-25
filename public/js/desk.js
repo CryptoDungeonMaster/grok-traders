@@ -104,7 +104,15 @@
     for (var i = 0; i < urls.length; i++) {
       try {
         var res = await fetch(urls[i], { headers: { Accept: "application/json" } });
-        if (!res.ok) { lastErr = new Error("desk " + res.status); continue; }
+        if (!res.ok) { 
+          var snippet = "";
+          try {
+            var text = await res.text();
+            snippet = text.length > 60 ? text.slice(0, 60) + "..." : text;
+          } catch (e) {}
+          lastErr = new Error("desk " + res.status + (snippet ? ": " + snippet : "")); 
+          continue; 
+        }
         var data = await res.json();
         return data;
       } catch (err) { lastErr = err; }
