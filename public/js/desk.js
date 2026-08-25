@@ -4,7 +4,19 @@
   var TZ = "Europe/Istanbul";
   var page = document.documentElement.getAttribute("data-page");
   var SEATS = ["blitz", "sage", "hype", "hex", "ghost"];
-  function seatHref(slug) { return "/" + slug; }
+  function seatOf(t) {
+    if (typeof t === "string") t = { slug: t, name: t };
+    var parts = [t && t.slug, t && t.id, t && t.trader, t && t.name];
+    for (var i = 0; i < parts.length; i++) {
+      var s = String(parts[i] || "").toLowerCase().replace(/\.html$/, "");
+      if (SEATS.indexOf(s) !== -1) return s;
+    }
+    return "";
+  }
+  function seatHref(t) {
+    var s = seatOf(t);
+    return s ? "/" + s + ".html" : "/index.html";
+  }
 
   function pad2(n) { return String(n).padStart(2, "0"); }
 
@@ -129,7 +141,7 @@
       row.appendChild(el("div", "rank", pad2(t.rank)));
       var who = el("div", "who");
       var name = el("a", "", t.name);
-      name.href = seatHref(t.slug);
+      name.href = seatHref(t);
       who.appendChild(name);
       who.appendChild(el("div", "voice", t.voice));
       var wal = el("div", "wallet", t.pubkey || "");
@@ -168,7 +180,7 @@
       time.dateTime = item.at || "";
       tick.appendChild(time);
       var name = el("a", "trader-name", item.name || item.trader);
-      name.href = seatHref(item.trader || "");
+      name.href = seatHref(item);
       tick.appendChild(name);
       tick.appendChild(el("div", "verb", verbOf(item)));
       var body = el("div", "body");
