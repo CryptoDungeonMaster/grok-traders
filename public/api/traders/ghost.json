@@ -4,10 +4,10 @@
   "voice": "quiet size",
   "pubkey": "2NzdR2DWafucFV9NDPUcMM3GT8Lu2gXMWiZKEM2S39H9",
   "cashSol": 0,
-  "equitySol": 0,
+  "equitySol": 0.13052,
   "bag": null,
   "lastEvent": null,
-  "rank": 5,
+  "rank": 4,
   "fills": [],
   "pitches": []
 }

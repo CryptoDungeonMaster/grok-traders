@@ -1,19 +1,36 @@
 {
-  "status": "UNFUNDED",
-  "updatedAt": "2026-08-25T15:49:28.697Z",
+  "status": "LIVE",
+  "updatedAt": "2026-08-25T17:41:36.579Z",
   "traders": [
+    {
+      "name": "Hex",
+      "slug": "hex",
+      "voice": "on-chain data nerd",
+      "pubkey": "ArPxuqfoPT7TRHzr77rTEUQt1dUY4F2X7QFvGTSkeEtF",
+      "cashSol": 0,
+      "equitySol": 0.14220811,
+      "bag": {
+        "ticker": "KIMIK3DEV",
+        "mint": "G2gXUNgVVXxNr5drzhvZFdFEd458zMcfWYtAb2uCpump",
+        "amount": 168443.619235
+      },
+      "lastEvent": {
+        "kind": "BUY",
+        "type": "fill",
+        "ticker": "$LAKE",
+        "at": "2026-08-25T17:30:05.000Z",
+        "paper": false
+      },
+      "rank": 1
+    },
     {
       "name": "Blitz",
       "slug": "blitz",
       "voice": "momentum sniper",
       "pubkey": "2S4aMjsBk6YKD9UcfeXAfFfeeDA5hibst1UJfGpPnsqP",
       "cashSol": 0,
-      "equitySol": 0,
-      "bag": {
-        "ticker": "APPLECAT",
-        "mint": "6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
-        "sizeSol": 2
-      },
+      "equitySol": 0.13852,
+      "bag": null,
       "lastEvent": {
         "kind": "PITCH",
         "type": "pitch",
@@ -21,7 +38,7 @@
         "at": "2026-08-25T15:35:00.049Z",
         "paper": false
       },
-      "rank": 1
+      "rank": 2
     },
     {
       "name": "Sage",
@@ -29,12 +46,8 @@
       "voice": "cold contrarian",
       "pubkey": "7JeRYiNZpKn4yiVSp8EPPsiGwgxFiyNf3tT6zTf6Mzs8",
       "cashSol": 0,
-      "equitySol": 0,
-      "bag": {
-        "ticker": "KERMIT",
-        "mint": "31TBAGQ4cydajbZYCqvuyA9SqmKV7zvtdmohkLAJpump",
-        "sizeSol": 1.5
-      },
+      "equitySol": 0.13852,
+      "bag": null,
       "lastEvent": {
         "kind": "PITCH",
         "type": "pitch",
@@ -42,39 +55,7 @@
         "at": "2026-08-25T15:42:00.049Z",
         "paper": false
       },
-      "rank": 2
-    },
-    {
-      "name": "Hype",
-      "slug": "hype",
-      "voice": "narrative evangelist",
-      "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
-      "cashSol": 0,
-      "equitySol": 0,
-      "bag": {
-        "ticker": "OTTER",
-        "mint": "FojFAR8uj6zn3327KD9WfFBVTbjvCwsVR5D3dyvSpump",
-        "sizeSol": 2.5
-      },
-      "lastEvent": {
-        "kind": "PITCH",
-        "type": "pitch",
-        "ticker": "OTTER",
-        "at": "2026-08-25T15:49:00.049Z",
-        "paper": false
-      },
       "rank": 3
-    },
-    {
-      "name": "Hex",
-      "slug": "hex",
-      "voice": "on-chain data nerd",
-      "pubkey": "ArPxuqfoPT7TRHzr77rTEUQt1dUY4F2X7QFvGTSkeEtF",
-      "cashSol": 0,
-      "equitySol": 0,
-      "bag": null,
-      "lastEvent": null,
-      "rank": 4
     },
     {
       "name": "Ghost",
@@ -82,10 +63,35 @@
       "voice": "quiet size",
       "pubkey": "2NzdR2DWafucFV9NDPUcMM3GT8Lu2gXMWiZKEM2S39H9",
       "cashSol": 0,
-      "equitySol": 0,
+      "equitySol": 0.13052,
       "bag": null,
       "lastEvent": null,
+      "rank": 4
+    },
+    {
+      "name": "Hype",
+      "slug": "hype",
+      "voice": "narrative evangelist",
+      "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
+      "cashSol": 0,
+      "equitySol": 0.004535464,
+      "bag": {
+        "ticker": "Mao",
+        "mint": "3K3AKRp9SrT2jEZGBtY56SaRCbnDqxwMWmpcuJ4kpump",
+        "amount": 223257.588054
+      },
+      "lastEvent": {
+        "kind": "BUY",
+        "type": "fill",
+        "ticker": "Mao",
+        "at": "2026-08-25T17:40:23.000Z",
+        "paper": false
+      },
       "rank": 5
     }
-  ]
+  ],
+  "source": {
+    "rpc": "https://mainnet.helius-rpc.com/",
+    "network": "mainnet-beta"
+  }
 }
