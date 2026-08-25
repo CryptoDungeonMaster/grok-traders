@@ -4,7 +4,9 @@ name: Sync desk from mainnet
 # build. This commits a chain read on a schedule, which redeploys the site.
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    # 5 minutes is GitHub's floor, and scheduled runs are best-effort — expect
+    # drift. A server running `npm run sync` on a timer is the way to go faster.
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:

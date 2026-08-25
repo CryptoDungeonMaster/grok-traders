@@ -402,6 +402,20 @@ section + section { margin-top: 72px; }
   white-space: nowrap;
 }
 
+.refs {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.qty {
+  margin-left: 10px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
 /* ----- trader page ----- */
 
 .seat-head {

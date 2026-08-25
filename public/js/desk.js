@@ -29,6 +29,12 @@
     return x.toLocaleString("en-US", { minimumFractionDigits: dp, maximumFractionDigits: dp });
   }
 
+  function fmtQty(n) {
+    var x = Number(n);
+    if (!Number.isFinite(x)) return "";
+    return x.toLocaleString("en-US", { maximumFractionDigits: x < 1 ? 6 : 2 });
+  }
+
   function partsInIstanbul(iso) {
     var d = iso ? new Date(iso) : new Date();
     var fmt = new Intl.DateTimeFormat("en-GB", {
@@ -78,6 +84,15 @@
     a.href = pumpHref(mint);
     a.target = "_blank";
     a.rel = "noopener noreferrer";
+    return a;
+  }
+
+  function txLink(sig) {
+    var a = el("a", "mint tx", "tx " + sig.slice(0, 4) + "…" + sig.slice(-4));
+    a.href = "https://solscan.io/tx/" + encodeURIComponent(sig);
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.title = sig;
     return a;
   }
 
@@ -208,19 +223,25 @@
           body.appendChild(line);
           body.appendChild(el("div", "copy", item.body));
         } else {
+          if (item.type === "fill" && item.tokenAmount) {
+            line.appendChild(el("span", "qty", fmtQty(item.tokenAmount)));
+          }
           if (item.body && item.type !== "fill") {
             line.appendChild(document.createTextNode("  " + item.body));
           }
           body.appendChild(line);
         }
+        var refs = el("div", "refs");
         if (item.mint) {
           var mint = el("a", "mint", shortMint(item.mint));
           mint.href = pumpHref(item.mint);
           mint.target = "_blank";
           mint.rel = "noopener noreferrer";
           mint.title = item.mint;
-          body.appendChild(mint);
+          refs.appendChild(mint);
         }
+        if (item.txSig) refs.appendChild(txLink(item.txSig));
+        if (refs.childNodes.length) body.appendChild(refs);
       } else {
         body.appendChild(el("div", "copy", item.body || "flat"));
       }
@@ -267,12 +288,19 @@
       if (href === "/" + slug || href === "/trader/" + slug || href === "/trader.html?seat=" + slug) a.classList.add("is-on");
     });
     var board = await getJson("/api/leaderboard.json");
-    var t = (board.traders || []).find(function (x) { return x.slug === slug; });
-    if (!t) t = await getJson("/api/traders/" + encodeURIComponent(slug) + ".json");
+    var listed = (board.traders || []).find(function (x) { return x.slug === slug; });
+    // The seat file is the only source that carries this trader's fills, so it is
+    // always fetched; the board entry just backfills if that request fails.
+    var seat = await getJson("/api/traders/" + encodeURIComponent(slug) + ".json").catch(function () { return null; });
+    var t = seat || listed;
     if (!t || !t.pubkey) throw new Error("unknown seat");
-    var tape = await getJson("/api/tape.json").catch(function () { return { items: [] }; });
-    t.pitches = t.pitches || (tape.items || []).filter(function (e) { return e.trader === slug || e.name === t.name; });
-    t.fills = t.fills || [];
+    var mine = function (e) { return e.trader === slug || e.name === t.name; };
+    if (!t.fills || !t.pitches) {
+      var tape = await getJson("/api/tape.json").catch(function () { return { items: [] }; });
+      var items = (tape.items || []).filter(mine);
+      t.fills = t.fills || items.filter(function (e) { return e.type === "fill"; });
+      t.pitches = t.pitches || items.filter(function (e) { return e.type !== "fill"; });
+    }
     setStatus(board.status);
     document.title = t.name + " — GROK TRADERS";
     document.getElementById("trader-name").textContent = t.name;
@@ -333,5 +361,7 @@
     }
     console.error(err);
   });
-  setInterval(function () { boot().catch(function () {}); }, 8000);
+  // Polling static JSON, so 10s is cheap; the ceiling on freshness is how often
+  // scripts/sync-chain.js republishes, not this interval.
+  setInterval(function () { boot().catch(function () {}); }, 10000);
 })();

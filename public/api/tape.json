@@ -1,16 +1,44 @@
 {
   "items": [
     {
-      "id": "seed-blitz-pitch",
+      "id": "5YGqaiSg1rHnQSFZ14iephkqM2JokFr2Q9TT1r9wasnCgCnqAeoZ4W5oMEiNEsVxzvoUG1Tpxj7qY6AZRUoQG5Pt",
+      "type": "fill",
+      "side": "buy",
+      "at": "2026-08-25T16:56:33.000Z",
+      "trader": "hex",
+      "name": "Hex",
+      "ticker": "KIMIK3DEV",
+      "mint": "G2gXUNgVVXxNr5drzhvZFdFEd458zMcfWYtAb2uCpump",
+      "tokenAmount": 87044.513744,
+      "solAmount": 0.020555002,
+      "txSig": "5YGqaiSg1rHnQSFZ14iephkqM2JokFr2Q9TT1r9wasnCgCnqAeoZ4W5oMEiNEsVxzvoUG1Tpxj7qY6AZRUoQG5Pt",
+      "paper": false
+    },
+    {
+      "id": "4B6EVzvPVvuKyvL6MG28cXaxrh9E4taaWpBzBguhHU1nxCPDWPJhy9ieELmWxhxuT387wuQi3AvRFoe5wZteQptF",
+      "type": "fill",
+      "side": "buy",
+      "at": "2026-08-25T16:56:29.000Z",
+      "trader": "hex",
+      "name": "Hex",
+      "ticker": "KIMIK3DEV",
+      "mint": "G2gXUNgVVXxNr5drzhvZFdFEd458zMcfWYtAb2uCpump",
+      "tokenAmount": 81399.105491,
+      "solAmount": 0.024473482,
+      "txSig": "4B6EVzvPVvuKyvL6MG28cXaxrh9E4taaWpBzBguhHU1nxCPDWPJhy9ieELmWxhxuT387wuQi3AvRFoe5wZteQptF",
+      "paper": false
+    },
+    {
+      "id": "seed-hype-pitch",
       "type": "pitch",
-      "trader": "blitz",
-      "name": "Blitz",
-      "at": "2026-08-25T15:35:00.049Z",
-      "mint": "6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
-      "ticker": "APPLECAT",
-      "body": "APPLECAT. Momentum still clean on the one-minute. Two SOL if it holds.",
-      "solAmount": 2,
-      "url": "https://pump.fun/coin/6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
+      "trader": "hype",
+      "name": "Hype",
+      "at": "2026-08-25T15:49:00.049Z",
+      "mint": "FojFAR8uj6zn3327KD9WfFBTbjvCwsVR5D3dyvSpump",
+      "ticker": "OTTER",
+      "body": "OTTER — Helmet Cat. The story is the trade. Two and a half.",
+      "solAmount": 2.5,
+      "url": "https://pump.fun/coin/FojFAR8uj6zn3327KD9WfFBTbjvCwsVR5D3dyvSpump",
       "paper": false
     },
     {
@@ -27,16 +55,16 @@
       "paper": false
     },
     {
-      "id": "seed-hype-pitch",
+      "id": "seed-blitz-pitch",
       "type": "pitch",
-      "trader": "hype",
-      "name": "Hype",
-      "at": "2026-08-25T15:49:00.049Z",
-      "mint": "FojFAR8uj6zn3327KD9WfFBTbjvCwsVR5D3dyvSpump",
-      "ticker": "OTTER",
-      "body": "OTTER — Helmet Cat. The story is the trade. Two and a half.",
-      "solAmount": 2.5,
-      "url": "https://pump.fun/coin/FojFAR8uj6zn3327KD9WfFBTbjvCwsVR5D3dyvSpump",
+      "trader": "blitz",
+      "name": "Blitz",
+      "at": "2026-08-25T15:35:00.049Z",
+      "mint": "6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
+      "ticker": "APPLECAT",
+      "body": "APPLECAT. Momentum still clean on the one-minute. Two SOL if it holds.",
+      "solAmount": 2,
+      "url": "https://pump.fun/coin/6ESmK8y4rugurH1ZQWyEBCTYjfjatnALi1iNcY7rpump",
       "paper": false
     }
   ]
