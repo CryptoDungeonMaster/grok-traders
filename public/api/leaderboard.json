@@ -1,6 +1,6 @@
 {
   "status": "LIVE",
-  "updatedAt": "2026-08-25T17:39:49.007Z",
+  "updatedAt": "2026-08-25T17:47:01.216Z",
   "traders": [
     {
       "name": "Hex",
@@ -74,24 +74,24 @@
       "voice": "narrative evangelist",
       "pubkey": "4Cio13C8gEeJZaWdwQQybMGhdu7zhaz6eCvHhyCrcEMK",
       "cashSol": 0,
-      "equitySol": 0.038658944,
+      "equitySol": 0.004535464,
       "bag": {
-        "ticker": "JohnPork",
-        "mint": "4B3H7K4Kv1kqX2d6i4kZ5SawvegeEG5RM2VvG9Kipump",
-        "amount": 36225.666523
+        "ticker": "Mao",
+        "mint": "3K3AKRp9SrT2jEZGBtY56SaRCbnDqxwMWmpcuJ4kpump",
+        "amount": 223257.588054
       },
       "lastEvent": {
         "kind": "BUY",
         "type": "fill",
-        "ticker": "JohnPork",
-        "at": "2026-08-25T17:36:20.000Z",
+        "ticker": "Mao",
+        "at": "2026-08-25T17:40:23.000Z",
         "paper": false
       },
       "rank": 5
     }
   ],
   "source": {
-    "rpc": "https://mainnet.helius-rpc.com/",
+    "rpc": "https://api.mainnet-beta.solana.com",
     "network": "mainnet-beta"
   }
 }

@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "id": "3hzJrmQJvENXQiGMceKy7Bq8WbLELzf3Ze53LJfjnSGZzyG6hopctgsT8SVq4z7WhDdpPPCVhnCtfmoGTc3cCKt7",
+      "type": "fill",
+      "side": "buy",
+      "at": "2026-08-25T17:40:23.000Z",
+      "trader": "hype",
+      "name": "Hype",
+      "ticker": "Mao",
+      "mint": "3K3AKRp9SrT2jEZGBtY56SaRCbnDqxwMWmpcuJ4kpump",
+      "tokenAmount": 223257.588054,
+      "solAmount": 0.03412348,
+      "txSig": "3hzJrmQJvENXQiGMceKy7Bq8WbLELzf3Ze53LJfjnSGZzyG6hopctgsT8SVq4z7WhDdpPPCVhnCtfmoGTc3cCKt7",
+      "paper": false
+    },
+    {
       "id": "5r9NEaKV26PefKB7auCbSGj3WVtd3PdPXq25NmESoPeY9f1gEWy1ywJ5ioMfvB7Sji3Gmn8f4wK7L8wN4N8HD4es",
       "type": "fill",
       "side": "buy",
